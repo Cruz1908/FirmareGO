@@ -1,0 +1,33 @@
+# Base de datos SQLite (fallback)
+data/*.db
+data/*.db-journal
+
+# Archivos temporales
+*.tmp
+*.log
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node modules (si se añade npm más adelante)
+node_modules/
+
+# Archivos de diseño originales (PDFs, etc.) - ya no se usan
+*.pdf
+Product Page/
+
+# Variables de entorno
+.env.php
+.env
+
+# Archivos de backup
+*.bak
+*~
+
