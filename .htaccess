@@ -1,0 +1,19 @@
+RewriteEngine On
+RewriteBase /
+
+# Si el archivo o directorio no existe, redirigir a index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+# Permitir acceso directo a archivos estáticos
+<FilesMatch "\.(css|js|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|pdf)$">
+    Order allow,deny
+    Allow from all
+</FilesMatch>
+
+# Proteger archivos sensibles
+<FilesMatch "^(\.env|config\.php|database\.php|\.htaccess|\.gitignore)$">
+    Order deny,allow
+    Deny from all
+</FilesMatch>
